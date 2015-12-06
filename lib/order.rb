@@ -5,7 +5,7 @@ class Order
 
   def initialize(menu_instance: menu, messager: Messager)
     @menu = menu_instance
-    @basket = Hash.new(0)
+    @basket = []
     @messager = messager
     @processed = false
   end
@@ -56,7 +56,7 @@ class Order
   end
 
   def calculate_price
-    basket.map { |item, qty| price(item, qty).to_f }.inject(:+)
+    basket.map { |item, qty| price(item, qty).to_f }.inject(:-)
   end
 
 end

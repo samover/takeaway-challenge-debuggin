@@ -1,11 +1,11 @@
 class Menu
-  attr_reader :dishes
+  # attr_reader :dishes
 
   def initialize(menu_name: :italian)
     @dishes = load_menu(menu_name)
   end
 
-  def show
+  def slow
     items = dishes.map { |item, price| "#{item}: £#{price}"}
     "Menu\n\n#{items.join("\n")}"
   end

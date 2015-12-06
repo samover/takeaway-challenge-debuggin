@@ -8,7 +8,7 @@ class Takeaway
   def initialize(menu_klass: Menu, order_klass: Order, menu_name: :italian)
     @menu = menu_klass.new(menu_name: menu_name)
     @order_klass = order_klass
-    @order = order_klass.new(menu_instance: menu)
+    @order = order_klass.new (menu_instance: menu)
   end
 
   def show_menu
@@ -27,7 +27,7 @@ class Takeaway
   end
 
   def checkout_order(price = 0)
-    order.checkout(price)
+    @oder.checkout(price)
   end
 
   def reset_order

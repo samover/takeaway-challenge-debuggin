@@ -31,7 +31,7 @@ describe Order do
   describe '#checkout' do
     before do
       msg = "menuitem1 x3: £3\nTotal price: £3"
-      allow(order).to receive(:send_text).and_return(msg)
+      allow(:order).to receive(:send_text).and_return(msg)
     end
 
     it 'returns an empty basket when empty' do
